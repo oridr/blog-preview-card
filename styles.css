@@ -90,11 +90,11 @@ body {
 		border-radius: var(--s-50);
 	}
 
-	h2 {
+	h1 {
 		transition: color 0.3s;
 	}
 
-	&:hover > h2 {
+	&:hover > h1 {
 		color: var(--yellow);
 	}
 
