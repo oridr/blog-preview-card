@@ -73,12 +73,21 @@ body {
 	color: var(--gray-950);
 
 	& > * + * {
-		margin-block-end: var(--s-125);
+		margin-block-start: var(--s-125);
 	}
 
 	img {
+		display: block;
 		border-radius: 0.625rem;
-		margin-block-end: var(--s-300);
+	}
+
+	.tag {
+		inline-size: fit-content;
+		margin-block-start: var(--s-300);
+		padding-block: var(--s-50);
+		padding-inline: var(--s-125);
+		background: var(--yellow);
+		border-radius: var(--s-50);
 	}
 
 	h2 {
@@ -89,23 +98,15 @@ body {
 		color: var(--yellow);
 	}
 
-	.tag {
-		inline-size: fit-content;
-		padding-block: var(--s-50);
-		padding-inline: var(--s-125);
-		background: var(--yellow);
-		border-radius: var(--s-50);
-	}
-
 	.description {
 		color: var(--gray-500);
-		margin-block-end: var(--s-300);
 	}
 
 	.author {
 		display: flex;
 		gap: var(--s-125);
 		align-items: center;
+		margin-block-start: var(--s-300);
 
 		&::before {
 			display: block;
