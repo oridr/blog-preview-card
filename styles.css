@@ -1,0 +1,119 @@
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	font: inherit; /* Get rid of all font sizes and heights */
+}
+
+:root {
+	/* colors */
+	--yellow: hsl(47, 88%, 63%);
+	--gray-500: hsl(0, 0%, 42%);
+	--gray-950: hsl(0, 0%, 7%);
+
+	/* spacing */
+	--s-300: 1.5rem;
+	--s-150: 0.9375rem;
+	--s-125: 0.75rem;
+	--s-100: 0.5rem;
+	--s-50: 0.25rem;
+
+	font-family: "Figtree", serif;
+	font-optical-sizing: auto;
+}
+
+body {
+	min-height:100dvh;
+	background: var(--yellow);
+	align-content: center;
+}
+
+.text-preset-1, .text-preset-2, .text-preset-3, .text-preset-4 {
+	line-height: 150%;
+	letter-spacing: 0;
+}
+
+.text-preset-1, .text-preset-4 {
+	font-weight: 800;
+}
+
+.text-preset-2, .text-preset-3 {
+	font-weight: 500;
+}
+
+.text-preset-1 {
+	font-size: 1.5rem;
+}
+
+.text-preset-2 {
+	font-size: 1rem;
+}
+
+.text-preset-3 {
+	font-size: 0.875rem;
+}
+
+.text-preset-4 {
+	font-size: 0.875rem;
+}
+
+.card {
+	margin-inline: auto;
+	padding: var(--s-300);
+
+	inline-size: clamp(0rem, 24rem, 100% - 2 * var(--s-300));
+
+	background: white;
+	border: 0.0625rem solid var(--gray-950);
+	box-shadow: var(--s-100) var(--s-100) 0 black;
+	border-radius: 1.25rem;
+	color: var(--gray-950);
+
+	& > * + * {
+		margin-block-end: var(--s-125);
+	}
+
+	img {
+		border-radius: 0.625rem;
+		margin-block-end: var(--s-300);
+	}
+
+	h2 {
+		transition: color 0.3s;
+	}
+
+	&:hover > h2 {
+		color: var(--yellow);
+	}
+
+	.tag {
+		inline-size: fit-content;
+		padding-block: var(--s-50);
+		padding-inline: var(--s-125);
+		background: var(--yellow);
+		border-radius: var(--s-50);
+	}
+
+	.description {
+		color: var(--gray-500);
+		margin-block-end: var(--s-300);
+	}
+
+	.author {
+		display: flex;
+		gap: var(--s-125);
+		align-items: center;
+
+		&::before {
+			display: block;
+			inline-size: 2rem;
+			aspect-ratio: 1;
+			background: url('./images/image-avatar.webp');
+			background-size: cover;
+			content: '';
+		}
+	}
+}
